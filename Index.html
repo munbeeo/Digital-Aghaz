@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Aghazz - Premium Excel Templates</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #f5576c);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            padding: 2rem 0;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: bounce 2s infinite;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .testimonials p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .testimonial:nth-child(1) { animation-delay: 0.1s; }
+        .testimonial:nth-child(2) { animation-delay: 0.2s; }
+        .testimonial:nth-child(3) { animation-delay: 0.3s; }
+
+        .testimonial:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .testimonial-role {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            margin-top: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Templates Section */
+        .templates-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .templates-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .templates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .template-category {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .template-category:nth-child(even) {
+            animation: slideInRight 1s ease-out;
+        }
+
+        .template-category:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        .template-header {
+            padding: 1rem;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .business { background: linear-gradient(135deg, #4CAF50, #45a049); }
+        .budget { background: linear-gradient(135deg, #2196F3, #1976D2); }
+        .analysis { background: linear-gradient(135deg, #FF9800, #F57C00); }
+        .profit { background: linear-gradient(135deg, #9C27B0, #7B1FA2); }
+        .projects { background: linear-gradient(135deg, #3F51B5, #303F9F); }
+        .invoices { background: linear-gradient(135deg, #607D8B, #455A64); }
+        .calendar { background: linear-gradient(135deg, #E91E63, #C2185B); }
+        .charts { background: linear-gradient(135deg, #FF5722, #D84315); }
+
+        .template-image {
+            height: 200px;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #ccc;
+        }
+
+        .template-title {
+            padding: 1rem;
+            text-align: center;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Hero Sale Section */
+        .hero-sale {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-sale::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gradient 20s linear infinite;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            text-align: left;
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .sale-badge {
+            background: #ff4444;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        .countdown {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: #ffeb3b;
+            animation: pulse 1s infinite;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .discount {
+            color: #ff4444;
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .hero-image {
+            animation: slideInRight 1s ease-out;
+        }
+
+        .excel-mockup {
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            background: linear-gradient(135deg, #2E7D32, #4CAF50);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .excel-mockup:hover {
+            transform: rotateY(10deg) rotateX(5deg);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: #ffd54f;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+
+        .stat {
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .stat:nth-child(1) { animation-delay: 0.1s; }
+        .stat:nth-child(2) { animation-delay: 0.2s; }
+        .stat:nth-child(3) { animation-delay: 0.3s; }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-weight: 500;
+        }
+
+        .stats-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .stats-description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        /* Transform Section */
+        .transform-section {
+            padding: 4rem 2rem;
+            background: white;
+        }
+
+        .transform-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .transform-text {
+            animation: slideInLeft 1s ease-out;
+        }
+
+        .transform-title {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #333;
+            line-height: 1.2;
+        }
+
+        .transform-description {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .transform-image {
+            animation: slideInRight 1s ease-out;
+            text-align: center;
+        }
+
+        .dashboard-mockup {
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+            background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #666;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .dashboard-mockup:hover {
+            transform: scale(1.05);
+        }
+
+        /* Features Section */
+        .features {
+            background: #f8f9fa;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .features-title {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .feature:nth-child(1) { animation-delay: 0.1s; }
+        .feature:nth-child(2) { animation-delay: 0.2s; }
+        .feature:nth-child(3) { animation-delay: 0.3s; }
+
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        .footer {
+            background: #333;
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .footer-description {
+            margin-bottom: 2rem;
+            opacity: 0.8;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .whatsapp-button {
+            background: #25d366;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            animation: bounce 2s infinite;
+        }
+
+        .whatsapp-button:hover {
+            background: #128c7e;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .transform-content {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .transform-title {
+                font-size: 2rem;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .templates-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <h1 class="logo">DIGITAL AGHAZZ</h1>
+            <p class="tagline">Premium Excel Templates & Digital Solutions</p>
+        </div>
+    </header>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <h2>Here's What Happened<br>After They Purchased</h2>
+        <p>See how one small investment brought clarity, speed, and organization to their work.</p>
+        
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">Absolutely worth it! I used to spend hours building spreadsheets from scratch. These templates are so well-designed and easy to use — saved me so much time!</p>
+                <div class="testimonial-author">Sarah Mitchell</div>
+                <div class="testimonial-role">Project Manager</div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">Professional and ready to go. I customized them for my business in minutes. My team loves the clean design and accuracy.</p>
+                <div class="testimonial-author">James Carter</div>
+                <div class="testimonial-role">Marketing Coordinator</div>
+            </div>
+            
+            <div class="testimonial">
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">Honestly, I didn't expect much for the price, but this package blew me away. Everything is organized and super user-friendly.</p>
+                <div class="testimonial-author">Daniel Brooks</div>
+                <div class="testimonial-role">Finance Analyst</div>
+            </div>
+        </div>
+        
+        <a href="#" class="cta-button">Get Offer Now → $5</a>
+    </section>
+
+    <!-- Templates Section -->
+    <section class="templates-section">
+        <h2 class="templates-title">Select from over 5000+ Template Sheets in 11 Popular Categories.</h2>
+        
+        <div class="templates-grid">
+            <div class="template-category">
+                <div class="template-header business">Business</div>
+                <div class="template-image">📊</div>
+                <div class="template-title">Business Sheet Excel Templates</div>
+            </div>
+            
+            <div class="template-category">
+                <div class="template-header budget">Budget</div>
+                <div class="template-image">💰</div>
+                <div class="template-title">Budget Sheet Excel Templates</div>
+            </div>
+            
+            <div class="template-category">
+                <div class="template-header analysis">Analysis & Schedules</div>
+                <div class="template-image">📈</div>
+                <div class="template-title">Analysis & Schedules Sheet Excel Templates</div>
+            </div>
+            
+            <div class="template-category">
+                <div class="template-header profit">Profit & Loss</div>
+                <div class="template-image">📋</div>
+                <div class="template-title">Profit & Loss Sheet Excel Templates</div>
+            </div>
+            
+            <div class="template-category">
+                <div class="template-header projects">Projects</div>
+                <div class="template-image">🔧</div>
+                <div class="template-title">Projects Sheet Excel Templates</div>
+            </div>
+            
+            <div class="template-category">
+                <div class="template-header invoices">Invoices</div>
+                <div class="template-image">📄</div>
+                <div class="template-title">Invoices Sheet Excel Templates</div>
+            </div>
+            
+            <div class="template-category">
+                <div class="template-header calendar">Calendar</div>
+                <div class="template-image">📅</div>
+                <div class="template-title">Calendar Sheet Excel Templates</div>
+            </div>
+            
+            <div class="template-category">
+                <div class="template-header charts">Charts</div>
+                <div class="template-image">📊</div>
+                <div class="template-title">Charts Sheet Excel Templates</div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="#" class="cta-button">Get Offer Now → $5</a>
+        </div>
+    </section>
+
+    <!-- Hero Sale Section -->
+    <section class="hero-sale">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="sale-badge">SCALE Smart</div>
+                <div class="countdown">07 : 47 : 04<br>
+                    <small style="font-size: 0.5em;">HOURS MINUTES SECONDS</small>
+                </div>
+                <p style="margin-bottom: 1rem;">Limited time offer: $5</p>
+                
+                <h1 class="hero-title">1000+ Ready-to-Use Excel Templates <span class="discount">50% OFF!</span></h1>
+                
+                <p class="hero-description">Complete tasks more quickly and efficiently by downloading and customizing over 1000+ spreadsheet templates. No Excel expertise is needed, no monthly fees apply, and no stress involved. Save valuable time with our ready-to-use templates</p>
+                
+                <a href="#" class="cta-button">Get Offer Now → $5</a>
+            </div>
+            
+            <div class="hero-image">
+                <div class="excel-mockup">
+                    1000+ READY TO USE<br>EXCEL TEMPLATE BUNDLE
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-grid">
+            <div class="stat">
+                <div class="stat-number">50,000+</div>
+                <div class="stat-label">Excel Sheets sold out</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">2M+</div>
+                <div class="stat-label">Active users</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">98%</div>
+                <div class="stat-label">Customer satisfaction</div>
+            </div>
+        </div>
+        
+        <h2 class="stats-title">Ready to turn your data into productivity powerhouses?</h2>
+        <p class="stats-description">Access 1000+ ready-to-use Excel templates designed to save you time, improve accuracy, and help you achieve more with less effort.</p>
+        
+        <a href="#" class="cta-button">Get Offer Now → $5</a>
+    </section>
+
+    <!-- Transform Section -->
+    <section class="transform-section">
+        <div class="transform-content">
+            <div class="transform-text">
+                <h2 class="transform-title">Transform raw data into clear and beautiful spreadsheets.</h2>
+                <p class="transform-description">Develop content that is easy to grasp and quickly digestible.</p>
+            </div>
+            <div class="transform-image">
+                <div class="dashboard-mockup">
+                    📊 Professional Dashboard<br>📈 Charts & Analytics<br>🎯 Data Visualization
+                </div>
+            </div>
+        </div>
+        
+        <h2 class="templates-title" style="margin-top: 3rem;">Select from over 5000+ Template Sheets in 11 Popular Categories.</h2>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <h2 class="features-title">Stop wasting time: the solution is now available!</h2>
+        
+        <div class="features-grid">
+            <div class="feature">
+                <div class="feature-icon">😊</div>
+                <h3 class="feature-title">EFFICIENT & SIMPLE</h3>
+                <p class="feature-description">Sheets are easily editable and automated, with all assumptions highlighted and centralized on one sheet.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">🛡️</div>
+                <h3 class="feature-title">MULTIFUNCTIONAL USE</h3>
+                <p class="feature-description">Over 140 sheets featuring different categories, ready-made benchmarks, multiple revenue streams, profit and loss statements.</p>
+            </div>
+            
+            <div class="feature">
+                <div class="feature-icon">👨‍💼</div>
+                <h3 class="feature-title">DESIGNED PROFESSIONALLY</h3>
+                <p class="feature-description">Designed professionally with stunning visuals that capture attention, helping you make an impression that counts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h2 class="footer-title">You Got Questions?<br>We Got Answers!<br>(Only Available To Early Action Takers)</h2>
+            <p class="footer-description">Get instant support and answers to all your questions about our Excel templates.</p>
+            <a href="#" class="whatsapp-button">💬 WhatsApp me</a>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Countdown timer animation
+        function updateCountdown() {
+            const countdownElement = document.querySelector('.countdown');
+            const now = new Date().getTime();
+            const endTime = now + (8 * 60 * 60 * 1000); // 8 hours from now
+            
+            setInterval(() => {
+                const currentTime = new Date().getTime();
+                const timeLeft = endTime - currentTime;
+                
+                const hours = Math.floor(timeLeft / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                
+                countdownElement.innerHTML = `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}<br><small style="font-size: 0.5em;">HOURS MINUTES SECONDS</small>`;
+            }, 1000);
+        }
+
+        updateCountdown();
+
+        // Add scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[class*="animation"]').forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+        // Add click effects to buttons
+        document.querySelectorAll('.cta-button, .whatsapp-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255,255,255,0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                `;
+                
+                this.style.position = 'relative';
+                this.style.overflow = 'hidden';
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+
+        // Add ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+            
+            const heroSection = document.querySelector('.hero-sale');
+            if (heroSection) {
+                heroSection.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Animate stats on scroll
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumber = entry.target.querySelector('.stat-number');
+                    const finalNumber = statNumber.textContent;
+                    let currentNumber = 0;
+                    const increment = parseInt(finalNumber.replace(/[^0-9]/g, '')) / 100;
+                    
+                    const countUp = setInterval(() => {
+                        currentNumber += increment;
+                        const formatted = finalNumber.includes('K') ? Math.floor(currentNumber) + 'K+' :
+                                         finalNumber.includes('M') ? (currentNumber / 1000).toFixed(1) + 'M+' :
+                                         finalNumber.includes('%') ? Math.floor(currentNumber) + '%' :
+                                         Math.floor(currentNumber).toLocaleString() + '+';
+                        
+                        statNumber.textContent = formatted;
+                        
+                        if (currentNumber >= parseInt(finalNumber.replace(/[^0-9]/g, ''))) {
+                            statNumber.textContent = finalNumber;
+                            clearInterval(countUp);
+                        }
+                    }, 20);
+                    
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+
+        document.querySelectorAll('.stat').forEach(stat => {
+            statsObserver.observe(stat);
+        });
+
+        // Hover effects for template categories
+        document.querySelectorAll('.template-category').forEach(category => {
+            category.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-15px) scale(1.02)';
+            });
+            
+            category.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Dynamic gradient animation
+        let gradientAngle = 0;
+        setInterval(() => {
+            gradientAngle += 1;
+            const header = document.querySelector('.header');
+            if (header) {
+                header.style.background = `linear-gradient(${gradientAngle}deg, #667eea, #764ba2, #f093fb, #f5576c)`;
+            }
+        }, 100);
+
+        // Floating animation for Excel mockup
+        const mockup = document.querySelector('.excel-mockup');
+        if (mockup) {
+            let floatDirection = 1;
+            let floatPosition = 0;
+            
+            setInterval(() => {
+                floatPosition += floatDirection * 0.5;
+                if (floatPosition > 10 || floatPosition < -10) {
+                    floatDirection *= -1;
+                }
+                mockup.style.transform = `translateY(${floatPosition}px) rotateY(10deg) rotateX(5deg)`;
+            }, 50);
+        }
+
+        // Add typing effect to main title
+        function typeWriter(element, text, speed = 100) {
+            let i = 0;
+            element.innerHTML = '';
+            
+            function type() {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            
+            type();
+        }
+
+        // Initialize typing effect when hero section is visible
+        const heroObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const title = entry.target.querySelector('.hero-title');
+                    if (title && !title.hasAttribute('data-typed')) {
+                        title.setAttribute('data-typed', 'true');
+                        const originalText = title.textContent;
+                        typeWriter(title, originalText, 50);
+                    }
+                    heroObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        const heroSection = document.querySelector('.hero-sale');
+        if (heroSection) {
+            heroObserver.observe(heroSection);
+        }
+
+        // Add shimmer effect to CTA buttons
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.style.position = 'relative';
+            button.style.overflow = 'hidden';
+            
+            const shimmer = document.createElement('div');
+            shimmer.style.cssText = `
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+                animation: shimmer 2s infinite;
+            `;
+            
+            button.appendChild(shimmer);
+        });
+
+        // Add shimmer animation
+        const shimmerStyle = document.createElement('style');
+        shimmerStyle.textContent = `
+            @keyframes shimmer {
+                0% { left: -100%; }
+                100% { left: 100%; }
+            }
+        `;
+        document.head.appendChild(shimmerStyle);
+
+        // Mobile menu toggle (if needed)
+        function isMobile() {
+            return window.innerWidth <= 768;
+        }
+
+        // Optimize animations for mobile
+        if (isMobile()) {
+            document.querySelectorAll('[class*="animation"]').forEach(el => {
+                el.style.animationDuration = '0.5s';
+            });
+        }
+
+        // Page load animation
+        window.addEventListener('load', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease';
+            
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+
+        console.log('Digital Aghazz website loaded successfully! 🚀');
+    </script>
+</body>
+</html>
